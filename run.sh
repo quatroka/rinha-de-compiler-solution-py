@@ -1,0 +1,1 @@
+sh generateall.sh && python main.py

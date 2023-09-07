@@ -1,0 +1,3 @@
+let _ = print (20);
+let x = 2;
+print (x)

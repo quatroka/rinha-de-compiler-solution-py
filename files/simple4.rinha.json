@@ -1,0 +1,50 @@
+{
+  "name": "./files/simple4.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "x",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/simple4.rinha"
+      }
+    },
+    "value": {
+      "kind": "Str",
+      "value": "olar",
+      "location": {
+        "start": 8,
+        "end": 14,
+        "filename": "./files/simple4.rinha"
+      }
+    },
+    "next": {
+      "kind": "Print",
+      "value": {
+        "kind": "Var",
+        "text": "x",
+        "location": {
+          "start": 22,
+          "end": 23,
+          "filename": "./files/simple4.rinha"
+        }
+      },
+      "location": {
+        "start": 16,
+        "end": 24,
+        "filename": "./files/simple4.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 24,
+      "filename": "./files/simple4.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 24,
+    "filename": "./files/simple4.rinha"
+  }
+}

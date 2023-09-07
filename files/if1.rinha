@@ -1,0 +1,8 @@
+let x = 2;
+
+let y = if (x < 2) {
+    2
+} else {
+    3
+};
+print (y)
