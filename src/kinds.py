@@ -113,7 +113,7 @@ class Call:
 @dataclass
 class Function:
     kind: str
-    parameters: List[Term]
+    parameters: List[Parameter]
     value: Term
     location: Loc
 

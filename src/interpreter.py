@@ -14,10 +14,10 @@ def identify_type(node: dict | list | str):
             "next": next,
             "location": location,
         }:
-            return Let("Let", name["text"], value, next, Loc(**location))
+            return Let("Let", identify_type(name), value, next, Loc(**location))
 
         case {"kind": "Function", "parameters": parameters, "value": value, "location": location}:
-            return Function("Function", parameters, value, Loc(**location))
+            return Function("Function", list(map(identify_type, parameters)), value, Loc(**location))
 
         case {"kind": "If", "condition": condition, "then": then, "otherwise": otherwise, "location": location}:
             return If("If", condition, then, otherwise, location)
@@ -51,6 +51,9 @@ def identify_type(node: dict | list | str):
         
         case {"kind": "Second", "value": value, "location": location}:
             return SecondFunction("Second", value, Loc(**location))
+        
+        case {"text": text, "location": location}:
+            return Parameter(text, Loc(**location))
 
     return node
 
@@ -63,7 +66,7 @@ def read_node(ast: dict | list, context: dict):
         case Let(kind, name, value, next, location):
             # print(f"Reading/Setting Let: {name}")
             node = read_node(value, context)
-            context[name] = node
+            context[name.text] = node
             # print(f"Context Variables: {context_variables}")
             # print(f"\nReading Next Command: {next}")
             return read_node(next, context)
@@ -90,7 +93,7 @@ def read_node(ast: dict | list, context: dict):
             # print(f"\nMethod context: {method_context}\n")
             for argument, parameter in zip(arguments, method[0]):
                 # print(f'====> {type(argument)} {argument} ||| {type(parameter)} {parameter}')
-                method_context[parameter['text']] = read_node(argument, method_context)
+                method_context[parameter.text] = read_node(argument, method_context)
             # print(f"\nMethod context: {method_context}\n")
             return read_node(method[1], method_context)
         case Var(kind, text, location):
