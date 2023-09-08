@@ -7,104 +7,106 @@ def identify_type(node: dict | list | str):
         case {"name": name, "expression": expression, "location": location}:
             return File(name, expression, Loc(**location))
 
-        case {
-            "kind": "Let",
-            "name": name,
-            "value": value,
-            "next": next,
-            "location": location,
-        }:
-            return Let("Let", identify_type(name), value, next, Loc(**location))
+        case {"kind": "Let", "location": location, "name": name, "value": value, "next": next}:
+            return Let("Let", Loc(**location), identify_type(name), value, next)
 
-        case {"kind": "Function", "parameters": parameters, "value": value, "location": location}:
-            return Function("Function", list(map(identify_type, parameters)), value, Loc(**location))
+        case {"kind": "Function", "location": location, "parameters": parameters, "value": value}:
+            return Function("Function", Loc(**location), list(map(identify_type, parameters)), value)
 
-        case {"kind": "If", "condition": condition, "then": then, "otherwise": otherwise, "location": location}:
-            return If("If", condition, then, otherwise, location)
+        case {"kind": "If", "location": location, "condition": condition, "then": then, "otherwise": otherwise}:
+            return If("If", location, condition, then, otherwise)
 
-        case {"kind": "Call", "callee": callee, "arguments": arguments, "location": location}:
-            return Call("Call", callee["text"], arguments, Loc(**location))
+        case {"kind": "Call", "location": location, "callee": callee, "arguments": arguments}:
+            return Call("Call", Loc(**location), callee["text"], arguments)
 
-        case {"kind": "Var", "text": text, "location": location}:
-            return Var("Var", text, Loc(**location))
+        case {"kind": "Var", "location": location, "text": text}:
+            return Var("Var", Loc(**location), text)
 
-        case {"kind": "Binary", "lhs": lhs, "op": op, "rhs": rhs, "location": location}:
-            return Binary("Binary", lhs, op, rhs, Loc(**location))
+        case {"kind": "Binary", "location": location, "lhs": lhs, "op": op, "rhs": rhs}:
+            return Binary("Binary", Loc(**location), lhs, op, rhs)
 
-        case {"kind": "Int", "value": value, "location": location}:
-            return Int("Int", value, Loc(**location))
+        case {"kind": "Int", "location": location, "value": value}:
+            return Int("Int", Loc(**location), value)
 
-        case {"kind": "Str", "value": value, "location": location}:
-            return Str("Str", value, Loc(**location))
+        case {"kind": "Str", "location": location, "value": value}:
+            return Str("Str", Loc(**location), value)
 
-        case {"kind": "Bool", "value": value, "location": location}:
-            return Bool("Bool", value, Loc(**location))
+        case {"kind": "Bool", "location": location, "value": value}:
+            return Bool("Bool", Loc(**location), value)
 
-        case {"kind": "Print", "value": value, "location": location}:
-            return PrintFunction("Print", value, Loc(**location))
+        case {"kind": "Print", "location": location, "value": value}:
+            return PrintFunction("Print", Loc(**location), value)
 
-        case {"kind": "Tuple", "first": first, "second": second, "location": location}:
-            return Tuple("Tuple", first, second, Loc(**location))
+        case {"kind": "Tuple", "location": location, "first": first, "second": second}:
+            return Tuple("Tuple", Loc(**location), first, second)
 
-        case {"kind": "First", "value": value, "location": location}:
-            return FirstFunction("First", value, Loc(**location))
+        case {"kind": "First", "location": location, "value": value}:
+            return FirstFunction("First", Loc(**location), value)
 
-        case {"kind": "Second", "value": value, "location": location}:
-            return SecondFunction("Second", value, Loc(**location))
+        case {"kind": "Second", "location": location, "value": value}:
+            return SecondFunction("Second", Loc(**location), value)
 
         case {"text": text, "location": location}:
             return Parameter(text, Loc(**location))
 
-    return node
-
 
 def read_node(ast: dict | list, context: dict):
     match identify_type(ast):
-        case File(name, expression, location):
+        case File(_, expression, _):
             read_node(expression, context)
-        case Let(kind, name, value, next, location):
+
+        case Let(_, _, name, value, next):
             node = read_node(value, context)
             context[name.text] = node
             return read_node(next, context)
-        case If(kind, condition, them, otherwise, location):
+
+        case If(_, _, condition, them, otherwise):
             condition_result = read_node(condition, context)
             return read_node(them, context) if condition_result else read_node(otherwise, context)
-        case Binary(kind, lhs, op, rhs):
+
+        case Binary(_, _, lhs, op, rhs):
             lhs = read_node(lhs, context)
-
             rhs = read_node(rhs, context)
-
             return BinaryOp[op](lhs, rhs)
-        case Call(kind, callee, arguments, location):
+
+        case Call(_, _, callee, arguments):
             method = context[callee]
             method_context = {**context}
             for argument, parameter in zip(arguments, method.parameters):
                 method_context[parameter.text] = read_node(argument, method_context)
             return read_node(method.value, method_context)
-        case Var(kind, text, location):
+
+        case Var(_, _, text):
             return context[text]
-        case PrintFunction(kind, value, location):
+
+        case PrintFunction(_, _, value):
             node = read_node(value, context)
             print(node)
-        case FirstFunction(kind, value, location):
+
+        case FirstFunction(_, _, value):
             node = read_node(value, context)
             if isinstance(node, tuple):
                 return read_node(node[0], context)
             return read_node(node, context)
-        case SecondFunction(kind, value, location):
+
+        case SecondFunction(_, _, value):
             node = read_node(value, context)
             if isinstance(node, tuple):
                 return read_node(node[1], context)
             return read_node(node, context)
-        case Int(kind, value, location) | Str(kind, value, location) | Bool(kind, value, location):
+
+        case Int(_, _, value) | Str(_, _, value) | Bool(_, _, value):
             return value
-        case Tuple(kind, first, second, location):
+
+        case Tuple(_, _, first, second):
             return (
                 first,
                 second,
             )
-        case Function(kind, parameters, value, location):
-            return Function(kind, parameters, value, location)
+
+        case Function(kind, location, parameters, value):
+            return Function(kind, location, parameters, value)
+
         case _:
             return ast
 

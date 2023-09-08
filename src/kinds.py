@@ -1,7 +1,7 @@
 from typing import Callable, Dict, List
 from dataclasses import dataclass
 
-Term = Dict
+# Term = Dict
 
 
 @dataclass
@@ -12,39 +12,37 @@ class Loc:
 
 
 @dataclass
+class Term:
+    kind: str
+    location: Loc
+
+
+@dataclass
 class Parameter:
     text: str
     location: Loc
 
 
 @dataclass
-class Let:
-    kind: str
+class Let(Term):
     name: Parameter
     value: Term
     next: Term
-    location: Loc
 
 
 @dataclass
-class Str:
-    kind: str
+class Str(Term):
     value: str
-    location: Loc
 
 
 @dataclass
-class Bool:
-    kind: str
+class Bool(Term):
     value: bool
-    location: Loc
 
 
 @dataclass
-class Int:
-    kind: str
+class Int(Term):
     value: int
-    location: Loc
 
 
 Add = lambda x, y: x + y
@@ -85,74 +83,52 @@ class File:
 
 
 @dataclass
-class If:
-    kind: str
+class If(Term):
     condition: Term
     then: Term
     otherwise: Term
-    location: Loc
 
 
 @dataclass
-class Binary:
-    kind: str
+class Binary(Term):
     lhs: Term
     op: Callable
     rhs: Term
-    location: Loc
 
 
 @dataclass
-class Call:
-    kind: str
+class Call(Term):
     callee: Term
     arguments: List[Term]
-    location: Loc
 
 
 @dataclass
-class Function:
-    kind: str
+class Function(Term):
     parameters: List[Parameter]
     value: Term
-    location: Loc
 
 
 @dataclass
-class PrintFunction:
-    kind: str
+class PrintFunction(Term):
     value: Term
-    location: Loc
 
 
 @dataclass
-class FirstFunction:
-    kind: str
+class FirstFunction(Term):
     value: Term
-    location: Loc
 
 
 @dataclass
-class SecondFunction:
-    kind: str
+class SecondFunction(Term):
     value: Term
-    location: Loc
 
 
 @dataclass
-class Tuple:
-    kind: str
+class Tuple(Term):
     first: Term
     second: Term
-    location: Loc
 
 
 @dataclass
-class Var:
-    kind: str
+class Var(Term):
     text: str
-    loc: Loc
-
-
-ValueTypes = Str | Int | Bool
-PermittedTerms = Int | Str | Call | Binary | Function | Let | If | PrintFunction | FirstFunction | SecondFunction | Bool | Tuple | Var
