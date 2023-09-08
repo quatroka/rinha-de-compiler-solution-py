@@ -148,12 +148,6 @@ class Tuple:
 
 
 @dataclass
-class Parameter:
-    text: str
-    location: Loc
-
-
-@dataclass
 class Var:
     kind: str
     text: str

@@ -1,0 +1,3 @@
+let x = (1,2);
+let _ = print(first(x));
+print(second(x))

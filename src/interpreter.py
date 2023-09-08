@@ -42,6 +42,15 @@ def identify_type(node: dict | list | str):
 
         case {"kind": "Print", "value": value, "location": location}:
             return PrintFunction("Print", value, Loc(**location))
+        
+        case {"kind": "Tuple", "first": first, "second": second, "location": location}:
+            return Tuple("Tuple", first, second, Loc(**location))
+        
+        case {"kind": "First", "value": value, "location": location}:
+            return FirstFunction("First", value, Loc(**location))
+        
+        case {"kind": "Second", "value": value, "location": location}:
+            return SecondFunction("Second", value, Loc(**location))
 
     return node
 
@@ -91,12 +100,24 @@ def read_node(ast: dict | list, context: dict):
             # print(f"Reading PrintFunction with value: {value}")
             node = read_node(value, context)
             print(node)
+        case FirstFunction(kind, value, location):
+            node = read_node(value, context)
+            if isinstance(node, tuple):
+                return read_node(node[0], context)
+            return read_node(node, context)
+        case SecondFunction(kind, value, location):
+            node = read_node(value, context)
+            if isinstance(node, tuple):
+                return read_node(node[1], context)
+            return read_node(node, context)
         case Int(kind, value, location):
             return value
         case Str(kind, value, location):
             return value
         case Bool(kind, value, location):
             return value
+        case Tuple(kind, first, second, location):
+            return (first, second,)
 
 
 def process_file(filepath: str) -> None:
