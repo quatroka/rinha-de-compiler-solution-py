@@ -72,7 +72,7 @@ def read_node(ast: dict | list, context: dict):
             return read_node(next, context)
         case Function(kind, parameters, value, location):
             # print(f"""Reading Function {value} with parameters: {",".join(p['text'] for p in parameters)}""")
-            return (parameters, value)
+            return Function(kind, parameters, value, location)
         case If(kind, condition, them, otherwise, location):
             # print(f"Reading If with condition {condition}")
             condition_result = read_node(condition, context)
@@ -91,11 +91,11 @@ def read_node(ast: dict | list, context: dict):
             method = context[callee]
             method_context = {**context}
             # print(f"\nMethod context: {method_context}\n")
-            for argument, parameter in zip(arguments, method[0]):
+            for argument, parameter in zip(arguments, method.parameters):
                 # print(f'====> {type(argument)} {argument} ||| {type(parameter)} {parameter}')
                 method_context[parameter.text] = read_node(argument, method_context)
             # print(f"\nMethod context: {method_context}\n")
-            return read_node(method[1], method_context)
+            return read_node(method.value, method_context)
         case Var(kind, text, location):
             # print(f"Reading Var: {text}")
             return context[text]
