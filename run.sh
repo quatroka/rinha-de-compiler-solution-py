@@ -1,1 +1,1 @@
-sh generateall.sh && python main.py
+sh generateall.sh && python main.py ./files/fib.json

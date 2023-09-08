@@ -24,8 +24,8 @@
       "name": {
         "text": "y",
         "location": {
-          "start": 16,
-          "end": 17,
+          "start": 15,
+          "end": 16,
           "filename": "./files/if1.rinha"
         }
       },
@@ -37,8 +37,8 @@
             "kind": "Var",
             "text": "x",
             "location": {
-              "start": 24,
-              "end": 25,
+              "start": 23,
+              "end": 24,
               "filename": "./files/if1.rinha"
             }
           },
@@ -47,14 +47,14 @@
             "kind": "Int",
             "value": 2,
             "location": {
-              "start": 28,
-              "end": 29,
+              "start": 27,
+              "end": 28,
               "filename": "./files/if1.rinha"
             }
           },
           "location": {
-            "start": 24,
-            "end": 29,
+            "start": 23,
+            "end": 28,
             "filename": "./files/if1.rinha"
           }
         },
@@ -62,8 +62,8 @@
           "kind": "Int",
           "value": 2,
           "location": {
-            "start": 37,
-            "end": 38,
+            "start": 36,
+            "end": 37,
             "filename": "./files/if1.rinha"
           }
         },
@@ -71,14 +71,14 @@
           "kind": "Int",
           "value": 3,
           "location": {
-            "start": 52,
-            "end": 53,
+            "start": 51,
+            "end": 52,
             "filename": "./files/if1.rinha"
           }
         },
         "location": {
-          "start": 20,
-          "end": 55,
+          "start": 19,
+          "end": 54,
           "filename": "./files/if1.rinha"
         }
       },
@@ -88,32 +88,32 @@
           "kind": "Var",
           "text": "y",
           "location": {
-            "start": 64,
-            "end": 65,
+            "start": 63,
+            "end": 64,
             "filename": "./files/if1.rinha"
           }
         },
         "location": {
-          "start": 57,
-          "end": 66,
+          "start": 56,
+          "end": 65,
           "filename": "./files/if1.rinha"
         }
       },
       "location": {
-        "start": 12,
-        "end": 66,
+        "start": 11,
+        "end": 65,
         "filename": "./files/if1.rinha"
       }
     },
     "location": {
       "start": 0,
-      "end": 66,
+      "end": 65,
       "filename": "./files/if1.rinha"
     }
   },
   "location": {
     "start": 0,
-    "end": 66,
+    "end": 65,
     "filename": "./files/if1.rinha"
   }
 }

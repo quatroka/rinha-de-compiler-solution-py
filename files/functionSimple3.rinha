@@ -1,0 +1,5 @@
+let add = fn (n) => {
+    n + 2
+};
+let x = add(add(2));
+print(x)

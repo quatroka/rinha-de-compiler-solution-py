@@ -1,0 +1,9 @@
+let x = 2;
+
+let y = if (x < 2) {
+    "foi true"
+} else {
+    let _ = print(55);
+    "foi false"
+};
+print (y)
