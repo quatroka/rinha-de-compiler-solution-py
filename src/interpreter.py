@@ -5,25 +5,25 @@ from src.kinds import *
 def identify_type(node: dict | list | str):
     match node:
         case {"name": name, "expression": expression, "location": location}:
-            return File(name, expression, Loc(**location))
+            return File(name, identify_type(expression), Loc(**location))
 
         case {"kind": "Let", "location": location, "name": name, "value": value, "next": next}:
-            return Let("Let", Loc(**location), identify_type(name), value, next)
+            return Let("Let", Loc(**location), identify_type(name), identify_type(value), identify_type(next))
 
         case {"kind": "Function", "location": location, "parameters": parameters, "value": value}:
-            return Function("Function", Loc(**location), list(map(identify_type, parameters)), value)
+            return Function("Function", Loc(**location), list(map(identify_type, parameters)), identify_type(value))
 
         case {"kind": "If", "location": location, "condition": condition, "then": then, "otherwise": otherwise}:
-            return If("If", location, condition, then, otherwise)
+            return If("If", Loc(**location), identify_type(condition), identify_type(then), identify_type(otherwise))
 
         case {"kind": "Call", "location": location, "callee": callee, "arguments": arguments}:
-            return Call("Call", Loc(**location), callee["text"], arguments)
+            return Call("Call", Loc(**location), callee["text"], list(map(identify_type, arguments)))
 
         case {"kind": "Var", "location": location, "text": text}:
             return Var("Var", Loc(**location), text)
 
         case {"kind": "Binary", "location": location, "lhs": lhs, "op": op, "rhs": rhs}:
-            return Binary("Binary", Loc(**location), lhs, op, rhs)
+            return Binary("Binary", Loc(**location), identify_type(lhs), op, identify_type(rhs))
 
         case {"kind": "Int", "location": location, "value": value}:
             return Int("Int", Loc(**location), value)
@@ -35,23 +35,23 @@ def identify_type(node: dict | list | str):
             return Bool("Bool", Loc(**location), value)
 
         case {"kind": "Print", "location": location, "value": value}:
-            return PrintFunction("Print", Loc(**location), value)
+            return PrintFunction("Print", Loc(**location), identify_type(value))
 
         case {"kind": "Tuple", "location": location, "first": first, "second": second}:
-            return Tuple("Tuple", Loc(**location), first, second)
+            return Tuple("Tuple", Loc(**location), identify_type(first), identify_type(second))
 
         case {"kind": "First", "location": location, "value": value}:
-            return FirstFunction("First", Loc(**location), value)
+            return FirstFunction("First", Loc(**location), identify_type(value))
 
         case {"kind": "Second", "location": location, "value": value}:
-            return SecondFunction("Second", Loc(**location), value)
+            return SecondFunction("Second", Loc(**location), identify_type(value))
 
         case {"text": text, "location": location}:
             return Parameter(text, Loc(**location))
 
 
 def read_node(ast: dict | list, context: dict):
-    match identify_type(ast):
+    match ast:
         case File(_, expression, _):
             read_node(expression, context)
 
@@ -115,4 +115,5 @@ def process_file(filepath: str) -> None:
     with open(filepath) as file:
         ast = json.load(file)
     context_variables = {}
-    read_node(ast, context_variables)
+    tree = identify_type(ast)
+    read_node(tree, context_variables)

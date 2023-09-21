@@ -1,0 +1,231 @@
+{
+  "name": "./files/random.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "a",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/random.rinha"
+      }
+    },
+    "value": {
+      "kind": "Int",
+      "value": 2,
+      "location": {
+        "start": 8,
+        "end": 9,
+        "filename": "./files/random.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "b",
+        "location": {
+          "start": 15,
+          "end": 16,
+          "filename": "./files/random.rinha"
+        }
+      },
+      "value": {
+        "kind": "Int",
+        "value": 3,
+        "location": {
+          "start": 19,
+          "end": 20,
+          "filename": "./files/random.rinha"
+        }
+      },
+      "next": {
+        "kind": "Let",
+        "name": {
+          "text": "add",
+          "location": {
+            "start": 26,
+            "end": 29,
+            "filename": "./files/random.rinha"
+          }
+        },
+        "value": {
+          "kind": "Function",
+          "parameters": [
+            {
+              "text": "n",
+              "location": {
+                "start": 36,
+                "end": 37,
+                "filename": "./files/random.rinha"
+              }
+            }
+          ],
+          "value": {
+            "kind": "Let",
+            "name": {
+              "text": "b",
+              "location": {
+                "start": 52,
+                "end": 53,
+                "filename": "./files/random.rinha"
+              }
+            },
+            "value": {
+              "kind": "Binary",
+              "lhs": {
+                "kind": "Var",
+                "text": "b",
+                "location": {
+                  "start": 56,
+                  "end": 57,
+                  "filename": "./files/random.rinha"
+                }
+              },
+              "op": "Add",
+              "rhs": {
+                "kind": "Int",
+                "value": 2,
+                "location": {
+                  "start": 60,
+                  "end": 61,
+                  "filename": "./files/random.rinha"
+                }
+              },
+              "location": {
+                "start": 56,
+                "end": 61,
+                "filename": "./files/random.rinha"
+              }
+            },
+            "next": {
+              "kind": "Binary",
+              "lhs": {
+                "kind": "Var",
+                "text": "n",
+                "location": {
+                  "start": 67,
+                  "end": 68,
+                  "filename": "./files/random.rinha"
+                }
+              },
+              "op": "Add",
+              "rhs": {
+                "kind": "Var",
+                "text": "a",
+                "location": {
+                  "start": 71,
+                  "end": 72,
+                  "filename": "./files/random.rinha"
+                }
+              },
+              "location": {
+                "start": 67,
+                "end": 72,
+                "filename": "./files/random.rinha"
+              }
+            },
+            "location": {
+              "start": 48,
+              "end": 72,
+              "filename": "./files/random.rinha"
+            }
+          },
+          "location": {
+            "start": 32,
+            "end": 74,
+            "filename": "./files/random.rinha"
+          }
+        },
+        "next": {
+          "kind": "Let",
+          "name": {
+            "text": "_",
+            "location": {
+              "start": 80,
+              "end": 81,
+              "filename": "./files/random.rinha"
+            }
+          },
+          "value": {
+            "kind": "Print",
+            "value": {
+              "kind": "Var",
+              "text": "b",
+              "location": {
+                "start": 90,
+                "end": 91,
+                "filename": "./files/random.rinha"
+              }
+            },
+            "location": {
+              "start": 84,
+              "end": 92,
+              "filename": "./files/random.rinha"
+            }
+          },
+          "next": {
+            "kind": "Print",
+            "value": {
+              "kind": "Call",
+              "callee": {
+                "kind": "Var",
+                "text": "add",
+                "location": {
+                  "start": 100,
+                  "end": 103,
+                  "filename": "./files/random.rinha"
+                }
+              },
+              "arguments": [
+                {
+                  "kind": "Int",
+                  "value": 2,
+                  "location": {
+                    "start": 104,
+                    "end": 105,
+                    "filename": "./files/random.rinha"
+                  }
+                }
+              ],
+              "location": {
+                "start": 100,
+                "end": 106,
+                "filename": "./files/random.rinha"
+              }
+            },
+            "location": {
+              "start": 94,
+              "end": 107,
+              "filename": "./files/random.rinha"
+            }
+          },
+          "location": {
+            "start": 76,
+            "end": 107,
+            "filename": "./files/random.rinha"
+          }
+        },
+        "location": {
+          "start": 22,
+          "end": 107,
+          "filename": "./files/random.rinha"
+        }
+      },
+      "location": {
+        "start": 11,
+        "end": 107,
+        "filename": "./files/random.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 107,
+      "filename": "./files/random.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 107,
+    "filename": "./files/random.rinha"
+  }
+}
