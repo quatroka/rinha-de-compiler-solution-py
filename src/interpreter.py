@@ -1,5 +1,26 @@
+from collections import OrderedDict
 import json
 from src.kinds import *
+
+def cache(cache, max_size = 1_000_000):
+    def decorator(fn):
+        
+        def wrapper(*args):
+            key = str(args)
+            if key in cache:
+                return cache[key]
+
+            result = fn(*args)
+
+            if len(cache) < max_size:
+                cache[key] = result
+            else:
+                del cache[next(iter(cache))]
+
+            return result
+
+        return wrapper
+    return decorator
 
 
 def identify_type(node: dict | list | str):
@@ -49,7 +70,7 @@ def identify_type(node: dict | list | str):
         case {"text": text, "location": location}:
             return Parameter(text, Loc(**location))
 
-
+@cache(cache = OrderedDict())
 def read_node(ast: dict | list, context: dict):
     match ast:
         case File(_, expression, _):
