@@ -1,0 +1,127 @@
+{
+  "name": "./files/generated_by_me/if2.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "x",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/if2.rinha"
+      }
+    },
+    "value": {
+      "kind": "Int",
+      "value": 2,
+      "location": {
+        "start": 8,
+        "end": 9,
+        "filename": "./files/generated_by_me/if2.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "y",
+        "location": {
+          "start": 16,
+          "end": 17,
+          "filename": "./files/generated_by_me/if2.rinha"
+        }
+      },
+      "value": {
+        "kind": "If",
+        "condition": {
+          "kind": "Binary",
+          "lhs": {
+            "kind": "Var",
+            "text": "x",
+            "location": {
+              "start": 24,
+              "end": 25,
+              "filename": "./files/generated_by_me/if2.rinha"
+            }
+          },
+          "op": "Lt",
+          "rhs": {
+            "kind": "Int",
+            "value": 2,
+            "location": {
+              "start": 28,
+              "end": 29,
+              "filename": "./files/generated_by_me/if2.rinha"
+            }
+          },
+          "location": {
+            "start": 24,
+            "end": 29,
+            "filename": "./files/generated_by_me/if2.rinha"
+          }
+        },
+        "then": {
+          "kind": "Int",
+          "value": 2,
+          "location": {
+            "start": 37,
+            "end": 38,
+            "filename": "./files/generated_by_me/if2.rinha"
+          }
+        },
+        "otherwise": {
+          "kind": "Print",
+          "value": {
+            "kind": "Int",
+            "value": 10,
+            "location": {
+              "start": 58,
+              "end": 60,
+              "filename": "./files/generated_by_me/if2.rinha"
+            }
+          },
+          "location": {
+            "start": 52,
+            "end": 61,
+            "filename": "./files/generated_by_me/if2.rinha"
+          }
+        },
+        "location": {
+          "start": 20,
+          "end": 63,
+          "filename": "./files/generated_by_me/if2.rinha"
+        }
+      },
+      "next": {
+        "kind": "Print",
+        "value": {
+          "kind": "Var",
+          "text": "y",
+          "location": {
+            "start": 72,
+            "end": 73,
+            "filename": "./files/generated_by_me/if2.rinha"
+          }
+        },
+        "location": {
+          "start": 65,
+          "end": 74,
+          "filename": "./files/generated_by_me/if2.rinha"
+        }
+      },
+      "location": {
+        "start": 12,
+        "end": 74,
+        "filename": "./files/generated_by_me/if2.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 74,
+      "filename": "./files/generated_by_me/if2.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 74,
+    "filename": "./files/generated_by_me/if2.rinha"
+  }
+}

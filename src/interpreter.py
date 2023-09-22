@@ -2,9 +2,9 @@ from collections import OrderedDict
 import json
 from src.kinds import *
 
-def cache(cache, max_size = 1_000_000):
+
+def cache(cache, max_size=1_000_000):
     def decorator(fn):
-        
         def wrapper(*args):
             key = str(args)
             if key in cache:
@@ -20,6 +20,7 @@ def cache(cache, max_size = 1_000_000):
             return result
 
         return wrapper
+
     return decorator
 
 
@@ -28,23 +29,69 @@ def identify_type(node: dict | list | str):
         case {"name": name, "expression": expression, "location": location}:
             return File(name, identify_type(expression), Loc(**location))
 
-        case {"kind": "Let", "location": location, "name": name, "value": value, "next": next}:
-            return Let("Let", Loc(**location), identify_type(name), identify_type(value), identify_type(next))
+        case {
+            "kind": "Let",
+            "location": location,
+            "name": name,
+            "value": value,
+            "next": next,
+        }:
+            return Let(
+                "Let",
+                Loc(**location),
+                identify_type(name),
+                identify_type(value),
+                identify_type(next),
+            )
 
-        case {"kind": "Function", "location": location, "parameters": parameters, "value": value}:
-            return Function("Function", Loc(**location), list(map(identify_type, parameters)), identify_type(value))
+        case {
+            "kind": "Function",
+            "location": location,
+            "parameters": parameters,
+            "value": value,
+        }:
+            return Function(
+                "Function",
+                Loc(**location),
+                list(map(identify_type, parameters)),
+                identify_type(value),
+            )
 
-        case {"kind": "If", "location": location, "condition": condition, "then": then, "otherwise": otherwise}:
-            return If("If", Loc(**location), identify_type(condition), identify_type(then), identify_type(otherwise))
+        case {
+            "kind": "If",
+            "location": location,
+            "condition": condition,
+            "then": then,
+            "otherwise": otherwise,
+        }:
+            return If(
+                "If",
+                Loc(**location),
+                identify_type(condition),
+                identify_type(then),
+                identify_type(otherwise),
+            )
 
-        case {"kind": "Call", "location": location, "callee": callee, "arguments": arguments}:
-            return Call("Call", Loc(**location), callee["text"], list(map(identify_type, arguments)))
+        case {
+            "kind": "Call",
+            "location": location,
+            "callee": callee,
+            "arguments": arguments,
+        }:
+            return Call(
+                "Call",
+                Loc(**location),
+                callee["text"],
+                list(map(identify_type, arguments)),
+            )
 
         case {"kind": "Var", "location": location, "text": text}:
             return Var("Var", Loc(**location), text)
 
         case {"kind": "Binary", "location": location, "lhs": lhs, "op": op, "rhs": rhs}:
-            return Binary("Binary", Loc(**location), identify_type(lhs), op, identify_type(rhs))
+            return Binary(
+                "Binary", Loc(**location), identify_type(lhs), op, identify_type(rhs)
+            )
 
         case {"kind": "Int", "location": location, "value": value}:
             return Int("Int", Loc(**location), value)
@@ -59,7 +106,9 @@ def identify_type(node: dict | list | str):
             return PrintFunction("Print", Loc(**location), identify_type(value))
 
         case {"kind": "Tuple", "location": location, "first": first, "second": second}:
-            return Tuple("Tuple", Loc(**location), identify_type(first), identify_type(second))
+            return Tuple(
+                "Tuple", Loc(**location), identify_type(first), identify_type(second)
+            )
 
         case {"kind": "First", "location": location, "value": value}:
             return FirstFunction("First", Loc(**location), identify_type(value))
@@ -70,7 +119,8 @@ def identify_type(node: dict | list | str):
         case {"text": text, "location": location}:
             return Parameter(text, Loc(**location))
 
-@cache(cache = OrderedDict())
+
+@cache(cache=OrderedDict())
 def read_node(ast: dict | list, context: dict):
     match ast:
         case File(_, expression, _):
@@ -83,7 +133,11 @@ def read_node(ast: dict | list, context: dict):
 
         case If(_, _, condition, them, otherwise):
             condition_result = read_node(condition, context)
-            return read_node(them, context) if condition_result else read_node(otherwise, context)
+            return (
+                read_node(them, context)
+                if condition_result
+                else read_node(otherwise, context)
+            )
 
         case Binary(_, _, lhs, op, rhs):
             lhs = read_node(lhs, context)

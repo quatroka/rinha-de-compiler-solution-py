@@ -1,0 +1,119 @@
+{
+  "name": "./files/generated_by_me/if1.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "x",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/if1.rinha"
+      }
+    },
+    "value": {
+      "kind": "Int",
+      "value": 2,
+      "location": {
+        "start": 8,
+        "end": 9,
+        "filename": "./files/generated_by_me/if1.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "y",
+        "location": {
+          "start": 15,
+          "end": 16,
+          "filename": "./files/generated_by_me/if1.rinha"
+        }
+      },
+      "value": {
+        "kind": "If",
+        "condition": {
+          "kind": "Binary",
+          "lhs": {
+            "kind": "Var",
+            "text": "x",
+            "location": {
+              "start": 23,
+              "end": 24,
+              "filename": "./files/generated_by_me/if1.rinha"
+            }
+          },
+          "op": "Lt",
+          "rhs": {
+            "kind": "Int",
+            "value": 2,
+            "location": {
+              "start": 27,
+              "end": 28,
+              "filename": "./files/generated_by_me/if1.rinha"
+            }
+          },
+          "location": {
+            "start": 23,
+            "end": 28,
+            "filename": "./files/generated_by_me/if1.rinha"
+          }
+        },
+        "then": {
+          "kind": "Int",
+          "value": 2,
+          "location": {
+            "start": 36,
+            "end": 37,
+            "filename": "./files/generated_by_me/if1.rinha"
+          }
+        },
+        "otherwise": {
+          "kind": "Int",
+          "value": 3,
+          "location": {
+            "start": 51,
+            "end": 52,
+            "filename": "./files/generated_by_me/if1.rinha"
+          }
+        },
+        "location": {
+          "start": 19,
+          "end": 54,
+          "filename": "./files/generated_by_me/if1.rinha"
+        }
+      },
+      "next": {
+        "kind": "Print",
+        "value": {
+          "kind": "Var",
+          "text": "y",
+          "location": {
+            "start": 63,
+            "end": 64,
+            "filename": "./files/generated_by_me/if1.rinha"
+          }
+        },
+        "location": {
+          "start": 56,
+          "end": 65,
+          "filename": "./files/generated_by_me/if1.rinha"
+        }
+      },
+      "location": {
+        "start": 11,
+        "end": 65,
+        "filename": "./files/generated_by_me/if1.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 65,
+      "filename": "./files/generated_by_me/if1.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 65,
+    "filename": "./files/generated_by_me/if1.rinha"
+  }
+}

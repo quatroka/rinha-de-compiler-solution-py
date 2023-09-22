@@ -1,0 +1,152 @@
+{
+  "name": "./files/generated_by_me/if3.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "x",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/if3.rinha"
+      }
+    },
+    "value": {
+      "kind": "Int",
+      "value": 2,
+      "location": {
+        "start": 8,
+        "end": 9,
+        "filename": "./files/generated_by_me/if3.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "y",
+        "location": {
+          "start": 16,
+          "end": 17,
+          "filename": "./files/generated_by_me/if3.rinha"
+        }
+      },
+      "value": {
+        "kind": "If",
+        "condition": {
+          "kind": "Binary",
+          "lhs": {
+            "kind": "Var",
+            "text": "x",
+            "location": {
+              "start": 24,
+              "end": 25,
+              "filename": "./files/generated_by_me/if3.rinha"
+            }
+          },
+          "op": "Lt",
+          "rhs": {
+            "kind": "Int",
+            "value": 2,
+            "location": {
+              "start": 28,
+              "end": 29,
+              "filename": "./files/generated_by_me/if3.rinha"
+            }
+          },
+          "location": {
+            "start": 24,
+            "end": 29,
+            "filename": "./files/generated_by_me/if3.rinha"
+          }
+        },
+        "then": {
+          "kind": "Str",
+          "value": "foi true",
+          "location": {
+            "start": 37,
+            "end": 47,
+            "filename": "./files/generated_by_me/if3.rinha"
+          }
+        },
+        "otherwise": {
+          "kind": "Let",
+          "name": {
+            "text": "_",
+            "location": {
+              "start": 65,
+              "end": 66,
+              "filename": "./files/generated_by_me/if3.rinha"
+            }
+          },
+          "value": {
+            "kind": "Print",
+            "value": {
+              "kind": "Int",
+              "value": 55,
+              "location": {
+                "start": 75,
+                "end": 77,
+                "filename": "./files/generated_by_me/if3.rinha"
+              }
+            },
+            "location": {
+              "start": 69,
+              "end": 78,
+              "filename": "./files/generated_by_me/if3.rinha"
+            }
+          },
+          "next": {
+            "kind": "Str",
+            "value": "foi false",
+            "location": {
+              "start": 84,
+              "end": 95,
+              "filename": "./files/generated_by_me/if3.rinha"
+            }
+          },
+          "location": {
+            "start": 61,
+            "end": 95,
+            "filename": "./files/generated_by_me/if3.rinha"
+          }
+        },
+        "location": {
+          "start": 20,
+          "end": 97,
+          "filename": "./files/generated_by_me/if3.rinha"
+        }
+      },
+      "next": {
+        "kind": "Print",
+        "value": {
+          "kind": "Var",
+          "text": "y",
+          "location": {
+            "start": 106,
+            "end": 107,
+            "filename": "./files/generated_by_me/if3.rinha"
+          }
+        },
+        "location": {
+          "start": 99,
+          "end": 108,
+          "filename": "./files/generated_by_me/if3.rinha"
+        }
+      },
+      "location": {
+        "start": 12,
+        "end": 108,
+        "filename": "./files/generated_by_me/if3.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 108,
+      "filename": "./files/generated_by_me/if3.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 108,
+    "filename": "./files/generated_by_me/if3.rinha"
+  }
+}

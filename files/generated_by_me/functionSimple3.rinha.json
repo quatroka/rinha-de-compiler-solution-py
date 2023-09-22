@@ -1,0 +1,149 @@
+{
+  "name": "./files/generated_by_me/functionSimple3.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "add",
+      "location": {
+        "start": 4,
+        "end": 7,
+        "filename": "./files/generated_by_me/functionSimple3.rinha"
+      }
+    },
+    "value": {
+      "kind": "Function",
+      "parameters": [
+        {
+          "text": "n",
+          "location": {
+            "start": 14,
+            "end": 15,
+            "filename": "./files/generated_by_me/functionSimple3.rinha"
+          }
+        }
+      ],
+      "value": {
+        "kind": "Binary",
+        "lhs": {
+          "kind": "Var",
+          "text": "n",
+          "location": {
+            "start": 26,
+            "end": 27,
+            "filename": "./files/generated_by_me/functionSimple3.rinha"
+          }
+        },
+        "op": "Add",
+        "rhs": {
+          "kind": "Int",
+          "value": 2,
+          "location": {
+            "start": 30,
+            "end": 31,
+            "filename": "./files/generated_by_me/functionSimple3.rinha"
+          }
+        },
+        "location": {
+          "start": 26,
+          "end": 31,
+          "filename": "./files/generated_by_me/functionSimple3.rinha"
+        }
+      },
+      "location": {
+        "start": 10,
+        "end": 33,
+        "filename": "./files/generated_by_me/functionSimple3.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "x",
+        "location": {
+          "start": 39,
+          "end": 40,
+          "filename": "./files/generated_by_me/functionSimple3.rinha"
+        }
+      },
+      "value": {
+        "kind": "Call",
+        "callee": {
+          "kind": "Var",
+          "text": "add",
+          "location": {
+            "start": 43,
+            "end": 46,
+            "filename": "./files/generated_by_me/functionSimple3.rinha"
+          }
+        },
+        "arguments": [
+          {
+            "kind": "Call",
+            "callee": {
+              "kind": "Var",
+              "text": "add",
+              "location": {
+                "start": 47,
+                "end": 50,
+                "filename": "./files/generated_by_me/functionSimple3.rinha"
+              }
+            },
+            "arguments": [
+              {
+                "kind": "Int",
+                "value": 2,
+                "location": {
+                  "start": 51,
+                  "end": 52,
+                  "filename": "./files/generated_by_me/functionSimple3.rinha"
+                }
+              }
+            ],
+            "location": {
+              "start": 47,
+              "end": 53,
+              "filename": "./files/generated_by_me/functionSimple3.rinha"
+            }
+          }
+        ],
+        "location": {
+          "start": 43,
+          "end": 54,
+          "filename": "./files/generated_by_me/functionSimple3.rinha"
+        }
+      },
+      "next": {
+        "kind": "Print",
+        "value": {
+          "kind": "Var",
+          "text": "x",
+          "location": {
+            "start": 62,
+            "end": 63,
+            "filename": "./files/generated_by_me/functionSimple3.rinha"
+          }
+        },
+        "location": {
+          "start": 56,
+          "end": 64,
+          "filename": "./files/generated_by_me/functionSimple3.rinha"
+        }
+      },
+      "location": {
+        "start": 35,
+        "end": 64,
+        "filename": "./files/generated_by_me/functionSimple3.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 64,
+      "filename": "./files/generated_by_me/functionSimple3.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 64,
+    "filename": "./files/generated_by_me/functionSimple3.rinha"
+  }
+}

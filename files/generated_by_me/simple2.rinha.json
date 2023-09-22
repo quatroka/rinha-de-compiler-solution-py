@@ -1,0 +1,116 @@
+{
+  "name": "./files/generated_by_me/simple2.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "_",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/simple2.rinha"
+      }
+    },
+    "value": {
+      "kind": "Print",
+      "value": {
+        "kind": "Int",
+        "value": 20,
+        "location": {
+          "start": 15,
+          "end": 17,
+          "filename": "./files/generated_by_me/simple2.rinha"
+        }
+      },
+      "location": {
+        "start": 8,
+        "end": 18,
+        "filename": "./files/generated_by_me/simple2.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "x",
+        "location": {
+          "start": 24,
+          "end": 25,
+          "filename": "./files/generated_by_me/simple2.rinha"
+        }
+      },
+      "value": {
+        "kind": "Int",
+        "value": 2,
+        "location": {
+          "start": 28,
+          "end": 29,
+          "filename": "./files/generated_by_me/simple2.rinha"
+        }
+      },
+      "next": {
+        "kind": "Let",
+        "name": {
+          "text": "y",
+          "location": {
+            "start": 35,
+            "end": 36,
+            "filename": "./files/generated_by_me/simple2.rinha"
+          }
+        },
+        "value": {
+          "kind": "Print",
+          "value": {
+            "kind": "Var",
+            "text": "x",
+            "location": {
+              "start": 46,
+              "end": 47,
+              "filename": "./files/generated_by_me/simple2.rinha"
+            }
+          },
+          "location": {
+            "start": 39,
+            "end": 48,
+            "filename": "./files/generated_by_me/simple2.rinha"
+          }
+        },
+        "next": {
+          "kind": "Print",
+          "value": {
+            "kind": "Var",
+            "text": "y",
+            "location": {
+              "start": 57,
+              "end": 58,
+              "filename": "./files/generated_by_me/simple2.rinha"
+            }
+          },
+          "location": {
+            "start": 50,
+            "end": 59,
+            "filename": "./files/generated_by_me/simple2.rinha"
+          }
+        },
+        "location": {
+          "start": 31,
+          "end": 59,
+          "filename": "./files/generated_by_me/simple2.rinha"
+        }
+      },
+      "location": {
+        "start": 20,
+        "end": 59,
+        "filename": "./files/generated_by_me/simple2.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 59,
+      "filename": "./files/generated_by_me/simple2.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 59,
+    "filename": "./files/generated_by_me/simple2.rinha"
+  }
+}
