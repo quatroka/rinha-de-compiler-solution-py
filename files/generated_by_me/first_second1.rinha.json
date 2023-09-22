@@ -1,0 +1,33 @@
+{
+  "name": "./files/generated_by_me/first_second1.rinha",
+  "expression": {
+    "kind": "Print",
+    "value": {
+      "kind": "First",
+      "value": {
+        "kind": "Int",
+        "value": 3,
+        "location": {
+          "start": 12,
+          "end": 13,
+          "filename": "./files/generated_by_me/first_second1.rinha"
+        }
+      },
+      "location": {
+        "start": 6,
+        "end": 14,
+        "filename": "./files/generated_by_me/first_second1.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 15,
+      "filename": "./files/generated_by_me/first_second1.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 15,
+    "filename": "./files/generated_by_me/first_second1.rinha"
+  }
+}

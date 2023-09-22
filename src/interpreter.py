@@ -168,13 +168,13 @@ def read_node(ast: dict | list, context: dict):
             node = read_node(value, context)
             if isinstance(node, tuple):
                 return read_node(node[0], context)
-            return read_node(node, context)
+            raise Exception("Error: first method only accepts tuple as parameter")
 
         case SecondFunction(_, _, value):
             node = read_node(value, context)
             if isinstance(node, tuple):
                 return read_node(node[1], context)
-            return read_node(node, context)
+            raise Exception("Error: second method only accepts tuple as parameter")
 
         case Int(_, _, value) | Str(_, _, value) | Bool(_, _, value):
             return value
@@ -197,4 +197,7 @@ def process_file(filepath: str) -> None:
         ast = json.load(file)
     context_variables = {}
     tree = identify_type(ast)
-    read_node(tree, context_variables)
+    try:
+        read_node(tree, context_variables)
+    except Exception as e:
+        print(e)
