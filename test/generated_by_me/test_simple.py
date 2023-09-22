@@ -24,4 +24,4 @@ def test_simple4(capfd: CaptureFixture):
 
 def test_simple5(capfd: CaptureFixture):
     process_file("./files/generated_by_me/simple5.rinha.json")
-    assert "True\n" == capfd.readouterr().out
+    assert "true\n" == capfd.readouterr().out

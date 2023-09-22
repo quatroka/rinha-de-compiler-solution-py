@@ -45,7 +45,14 @@ class Int(Term):
     value: int
 
 
-Add = lambda x, y: x + y
+def Add(x, y):
+    if isinstance(x, bool):
+        x = str(x).lower()
+    if isinstance(y, bool):
+        y = str(y).lower()
+    if isinstance(x, str) or isinstance(y, str):
+        return f"{str(x)}{str(y)}"
+    return x + y
 Sub = lambda x, y: x - y
 Mul = lambda x, y: x * y
 Div = lambda x, y: x / y

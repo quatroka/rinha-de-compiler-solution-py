@@ -155,8 +155,12 @@ def read_node(ast: dict | list, context: dict):
             return context[text]
 
         case PrintFunction(_, _, value):
-            node = read_node(value, context)
-            print(node)
+            result = read_node(value, context)
+            if isinstance(result, bool):
+                result = str(result).lower()
+            if isinstance(result, tuple):
+                result = f"({result[0].value}, {result[1].value})"
+            print(result)
 
         case FirstFunction(_, _, value):
             node = read_node(value, context)

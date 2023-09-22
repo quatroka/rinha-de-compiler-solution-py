@@ -1,0 +1,274 @@
+{
+  "name": "./files/generated_by_me/print2.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "a",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/print2.rinha"
+      }
+    },
+    "value": {
+      "kind": "Str",
+      "value": "oi",
+      "location": {
+        "start": 8,
+        "end": 12,
+        "filename": "./files/generated_by_me/print2.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "_",
+        "location": {
+          "start": 18,
+          "end": 19,
+          "filename": "./files/generated_by_me/print2.rinha"
+        }
+      },
+      "value": {
+        "kind": "Print",
+        "value": {
+          "kind": "Var",
+          "text": "a",
+          "location": {
+            "start": 28,
+            "end": 29,
+            "filename": "./files/generated_by_me/print2.rinha"
+          }
+        },
+        "location": {
+          "start": 22,
+          "end": 30,
+          "filename": "./files/generated_by_me/print2.rinha"
+        }
+      },
+      "next": {
+        "kind": "Let",
+        "name": {
+          "text": "_",
+          "location": {
+            "start": 36,
+            "end": 37,
+            "filename": "./files/generated_by_me/print2.rinha"
+          }
+        },
+        "value": {
+          "kind": "Print",
+          "value": {
+            "kind": "Str",
+            "value": "a",
+            "location": {
+              "start": 46,
+              "end": 49,
+              "filename": "./files/generated_by_me/print2.rinha"
+            }
+          },
+          "location": {
+            "start": 40,
+            "end": 50,
+            "filename": "./files/generated_by_me/print2.rinha"
+          }
+        },
+        "next": {
+          "kind": "Let",
+          "name": {
+            "text": "_",
+            "location": {
+              "start": 56,
+              "end": 57,
+              "filename": "./files/generated_by_me/print2.rinha"
+            }
+          },
+          "value": {
+            "kind": "Print",
+            "value": {
+              "kind": "Int",
+              "value": 2,
+              "location": {
+                "start": 66,
+                "end": 67,
+                "filename": "./files/generated_by_me/print2.rinha"
+              }
+            },
+            "location": {
+              "start": 60,
+              "end": 68,
+              "filename": "./files/generated_by_me/print2.rinha"
+            }
+          },
+          "next": {
+            "kind": "Let",
+            "name": {
+              "text": "_",
+              "location": {
+                "start": 74,
+                "end": 75,
+                "filename": "./files/generated_by_me/print2.rinha"
+              }
+            },
+            "value": {
+              "kind": "Print",
+              "value": {
+                "kind": "Bool",
+                "value": true,
+                "location": {
+                  "start": 84,
+                  "end": 88,
+                  "filename": "./files/generated_by_me/print2.rinha"
+                }
+              },
+              "location": {
+                "start": 78,
+                "end": 89,
+                "filename": "./files/generated_by_me/print2.rinha"
+              }
+            },
+            "next": {
+              "kind": "Let",
+              "name": {
+                "text": "_",
+                "location": {
+                  "start": 95,
+                  "end": 96,
+                  "filename": "./files/generated_by_me/print2.rinha"
+                }
+              },
+              "value": {
+                "kind": "Print",
+                "value": {
+                  "kind": "Tuple",
+                  "first": {
+                    "kind": "Int",
+                    "value": 1,
+                    "location": {
+                      "start": 106,
+                      "end": 107,
+                      "filename": "./files/generated_by_me/print2.rinha"
+                    }
+                  },
+                  "second": {
+                    "kind": "Int",
+                    "value": 2,
+                    "location": {
+                      "start": 109,
+                      "end": 110,
+                      "filename": "./files/generated_by_me/print2.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 105,
+                    "end": 111,
+                    "filename": "./files/generated_by_me/print2.rinha"
+                  }
+                },
+                "location": {
+                  "start": 99,
+                  "end": 112,
+                  "filename": "./files/generated_by_me/print2.rinha"
+                }
+              },
+              "next": {
+                "kind": "Let",
+                "name": {
+                  "text": "b",
+                  "location": {
+                    "start": 118,
+                    "end": 119,
+                    "filename": "./files/generated_by_me/print2.rinha"
+                  }
+                },
+                "value": {
+                  "kind": "Tuple",
+                  "first": {
+                    "kind": "Int",
+                    "value": 3,
+                    "location": {
+                      "start": 123,
+                      "end": 124,
+                      "filename": "./files/generated_by_me/print2.rinha"
+                    }
+                  },
+                  "second": {
+                    "kind": "Int",
+                    "value": 4,
+                    "location": {
+                      "start": 126,
+                      "end": 127,
+                      "filename": "./files/generated_by_me/print2.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 122,
+                    "end": 128,
+                    "filename": "./files/generated_by_me/print2.rinha"
+                  }
+                },
+                "next": {
+                  "kind": "Print",
+                  "value": {
+                    "kind": "Var",
+                    "text": "b",
+                    "location": {
+                      "start": 136,
+                      "end": 137,
+                      "filename": "./files/generated_by_me/print2.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 130,
+                    "end": 138,
+                    "filename": "./files/generated_by_me/print2.rinha"
+                  }
+                },
+                "location": {
+                  "start": 114,
+                  "end": 138,
+                  "filename": "./files/generated_by_me/print2.rinha"
+                }
+              },
+              "location": {
+                "start": 91,
+                "end": 138,
+                "filename": "./files/generated_by_me/print2.rinha"
+              }
+            },
+            "location": {
+              "start": 70,
+              "end": 138,
+              "filename": "./files/generated_by_me/print2.rinha"
+            }
+          },
+          "location": {
+            "start": 52,
+            "end": 138,
+            "filename": "./files/generated_by_me/print2.rinha"
+          }
+        },
+        "location": {
+          "start": 32,
+          "end": 138,
+          "filename": "./files/generated_by_me/print2.rinha"
+        }
+      },
+      "location": {
+        "start": 14,
+        "end": 138,
+        "filename": "./files/generated_by_me/print2.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 138,
+      "filename": "./files/generated_by_me/print2.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 138,
+    "filename": "./files/generated_by_me/print2.rinha"
+  }
+}

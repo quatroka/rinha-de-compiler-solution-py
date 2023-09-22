@@ -1,0 +1,6 @@
+let a = "oi";
+let _ = print("prefix: " + a);
+let _ = print("prefix: " + "a");
+let _ = print("prefix: " + 2);
+let _ = print("prefix: " + true);
+print("prefix: " + first((1, 2)))
