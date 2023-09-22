@@ -9,7 +9,7 @@ def test_simple(capfd: CaptureFixture):
 
 def test_simple2(capfd: CaptureFixture):
     process_file("./files/generated_by_me/simple2.rinha.json")
-    assert "20\n2\nNone\n" == capfd.readouterr().out
+    assert "20\n2\n2\n" == capfd.readouterr().out
 
 
 def test_simple3(capfd: CaptureFixture):

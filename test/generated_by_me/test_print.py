@@ -17,3 +17,11 @@ def test_print3(capfd: CaptureFixture):
 def test_print4(capfd: CaptureFixture):
     process_file("./files/generated_by_me/print4.rinha.json")
     assert "true\nfalse\nfalse\ntrue\n---\ntrue\nfalse\nfalse\ntrue\n" == capfd.readouterr().out
+
+def test_print5(capfd: CaptureFixture):
+    process_file("./files/generated_by_me/print5.rinha.json")
+    assert "4: sufix\n" == capfd.readouterr().out
+
+def test_print6(capfd: CaptureFixture):
+    process_file("./files/generated_by_me/print6.rinha.json")
+    assert "1\n2\n3\n" == capfd.readouterr().out

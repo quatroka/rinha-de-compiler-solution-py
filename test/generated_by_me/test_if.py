@@ -9,7 +9,7 @@ def test_if1(capfd: CaptureFixture):
 
 def test_if2(capfd: CaptureFixture):
     process_file("./files/generated_by_me/if2.rinha.json")
-    assert "10\nNone\n" == capfd.readouterr().out
+    assert "10\n10\n" == capfd.readouterr().out
 
 
 def test_if3(capfd: CaptureFixture):
