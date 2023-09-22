@@ -30,3 +30,8 @@ def test_fib25(capfd: CaptureFixture):
 def test_fib30(capfd: CaptureFixture):
     process_file("./files/generated_by_me/fib30.rinha.json")
     assert "832040\n" == capfd.readouterr().out
+
+
+def test_fib46(capfd: CaptureFixture):
+    process_file("./files/generated_by_me/fib46.rinha.json")
+    assert "1836311903\n" == capfd.readouterr().out
