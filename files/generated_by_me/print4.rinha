@@ -1,0 +1,11 @@
+let a = true;
+let b = false;
+let _ = print(a);
+let _ = print(b);
+let _ = print(a && b);
+let _ = print(a || b);
+let _ = print("---");
+let _ = print(a);
+let _ = print(b);
+let _ = print(a && b);
+print(a || b)

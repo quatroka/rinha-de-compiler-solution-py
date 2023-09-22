@@ -1,0 +1,411 @@
+{
+  "name": "./files/generated_by_me/print4.rinha",
+  "expression": {
+    "kind": "Let",
+    "name": {
+      "text": "a",
+      "location": {
+        "start": 4,
+        "end": 5,
+        "filename": "./files/generated_by_me/print4.rinha"
+      }
+    },
+    "value": {
+      "kind": "Bool",
+      "value": true,
+      "location": {
+        "start": 8,
+        "end": 12,
+        "filename": "./files/generated_by_me/print4.rinha"
+      }
+    },
+    "next": {
+      "kind": "Let",
+      "name": {
+        "text": "b",
+        "location": {
+          "start": 18,
+          "end": 19,
+          "filename": "./files/generated_by_me/print4.rinha"
+        }
+      },
+      "value": {
+        "kind": "Bool",
+        "value": false,
+        "location": {
+          "start": 22,
+          "end": 27,
+          "filename": "./files/generated_by_me/print4.rinha"
+        }
+      },
+      "next": {
+        "kind": "Let",
+        "name": {
+          "text": "_",
+          "location": {
+            "start": 33,
+            "end": 34,
+            "filename": "./files/generated_by_me/print4.rinha"
+          }
+        },
+        "value": {
+          "kind": "Print",
+          "value": {
+            "kind": "Var",
+            "text": "a",
+            "location": {
+              "start": 43,
+              "end": 44,
+              "filename": "./files/generated_by_me/print4.rinha"
+            }
+          },
+          "location": {
+            "start": 37,
+            "end": 45,
+            "filename": "./files/generated_by_me/print4.rinha"
+          }
+        },
+        "next": {
+          "kind": "Let",
+          "name": {
+            "text": "_",
+            "location": {
+              "start": 51,
+              "end": 52,
+              "filename": "./files/generated_by_me/print4.rinha"
+            }
+          },
+          "value": {
+            "kind": "Print",
+            "value": {
+              "kind": "Var",
+              "text": "b",
+              "location": {
+                "start": 61,
+                "end": 62,
+                "filename": "./files/generated_by_me/print4.rinha"
+              }
+            },
+            "location": {
+              "start": 55,
+              "end": 63,
+              "filename": "./files/generated_by_me/print4.rinha"
+            }
+          },
+          "next": {
+            "kind": "Let",
+            "name": {
+              "text": "_",
+              "location": {
+                "start": 69,
+                "end": 70,
+                "filename": "./files/generated_by_me/print4.rinha"
+              }
+            },
+            "value": {
+              "kind": "Print",
+              "value": {
+                "kind": "Binary",
+                "lhs": {
+                  "kind": "Var",
+                  "text": "a",
+                  "location": {
+                    "start": 79,
+                    "end": 80,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "op": "And",
+                "rhs": {
+                  "kind": "Var",
+                  "text": "b",
+                  "location": {
+                    "start": 84,
+                    "end": 85,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "location": {
+                  "start": 79,
+                  "end": 85,
+                  "filename": "./files/generated_by_me/print4.rinha"
+                }
+              },
+              "location": {
+                "start": 73,
+                "end": 86,
+                "filename": "./files/generated_by_me/print4.rinha"
+              }
+            },
+            "next": {
+              "kind": "Let",
+              "name": {
+                "text": "_",
+                "location": {
+                  "start": 92,
+                  "end": 93,
+                  "filename": "./files/generated_by_me/print4.rinha"
+                }
+              },
+              "value": {
+                "kind": "Print",
+                "value": {
+                  "kind": "Binary",
+                  "lhs": {
+                    "kind": "Var",
+                    "text": "a",
+                    "location": {
+                      "start": 102,
+                      "end": 103,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "op": "Or",
+                  "rhs": {
+                    "kind": "Var",
+                    "text": "b",
+                    "location": {
+                      "start": 107,
+                      "end": 108,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 102,
+                    "end": 108,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "location": {
+                  "start": 96,
+                  "end": 109,
+                  "filename": "./files/generated_by_me/print4.rinha"
+                }
+              },
+              "next": {
+                "kind": "Let",
+                "name": {
+                  "text": "_",
+                  "location": {
+                    "start": 115,
+                    "end": 116,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "value": {
+                  "kind": "Print",
+                  "value": {
+                    "kind": "Str",
+                    "value": "---",
+                    "location": {
+                      "start": 125,
+                      "end": 130,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 119,
+                    "end": 131,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "next": {
+                  "kind": "Let",
+                  "name": {
+                    "text": "_",
+                    "location": {
+                      "start": 137,
+                      "end": 138,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "value": {
+                    "kind": "Print",
+                    "value": {
+                      "kind": "Var",
+                      "text": "a",
+                      "location": {
+                        "start": 147,
+                        "end": 148,
+                        "filename": "./files/generated_by_me/print4.rinha"
+                      }
+                    },
+                    "location": {
+                      "start": 141,
+                      "end": 149,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "next": {
+                    "kind": "Let",
+                    "name": {
+                      "text": "_",
+                      "location": {
+                        "start": 155,
+                        "end": 156,
+                        "filename": "./files/generated_by_me/print4.rinha"
+                      }
+                    },
+                    "value": {
+                      "kind": "Print",
+                      "value": {
+                        "kind": "Var",
+                        "text": "b",
+                        "location": {
+                          "start": 165,
+                          "end": 166,
+                          "filename": "./files/generated_by_me/print4.rinha"
+                        }
+                      },
+                      "location": {
+                        "start": 159,
+                        "end": 167,
+                        "filename": "./files/generated_by_me/print4.rinha"
+                      }
+                    },
+                    "next": {
+                      "kind": "Let",
+                      "name": {
+                        "text": "_",
+                        "location": {
+                          "start": 173,
+                          "end": 174,
+                          "filename": "./files/generated_by_me/print4.rinha"
+                        }
+                      },
+                      "value": {
+                        "kind": "Print",
+                        "value": {
+                          "kind": "Binary",
+                          "lhs": {
+                            "kind": "Var",
+                            "text": "a",
+                            "location": {
+                              "start": 183,
+                              "end": 184,
+                              "filename": "./files/generated_by_me/print4.rinha"
+                            }
+                          },
+                          "op": "And",
+                          "rhs": {
+                            "kind": "Var",
+                            "text": "b",
+                            "location": {
+                              "start": 188,
+                              "end": 189,
+                              "filename": "./files/generated_by_me/print4.rinha"
+                            }
+                          },
+                          "location": {
+                            "start": 183,
+                            "end": 189,
+                            "filename": "./files/generated_by_me/print4.rinha"
+                          }
+                        },
+                        "location": {
+                          "start": 177,
+                          "end": 190,
+                          "filename": "./files/generated_by_me/print4.rinha"
+                        }
+                      },
+                      "next": {
+                        "kind": "Print",
+                        "value": {
+                          "kind": "Binary",
+                          "lhs": {
+                            "kind": "Var",
+                            "text": "a",
+                            "location": {
+                              "start": 198,
+                              "end": 199,
+                              "filename": "./files/generated_by_me/print4.rinha"
+                            }
+                          },
+                          "op": "Or",
+                          "rhs": {
+                            "kind": "Var",
+                            "text": "b",
+                            "location": {
+                              "start": 203,
+                              "end": 204,
+                              "filename": "./files/generated_by_me/print4.rinha"
+                            }
+                          },
+                          "location": {
+                            "start": 198,
+                            "end": 204,
+                            "filename": "./files/generated_by_me/print4.rinha"
+                          }
+                        },
+                        "location": {
+                          "start": 192,
+                          "end": 205,
+                          "filename": "./files/generated_by_me/print4.rinha"
+                        }
+                      },
+                      "location": {
+                        "start": 169,
+                        "end": 205,
+                        "filename": "./files/generated_by_me/print4.rinha"
+                      }
+                    },
+                    "location": {
+                      "start": 151,
+                      "end": 205,
+                      "filename": "./files/generated_by_me/print4.rinha"
+                    }
+                  },
+                  "location": {
+                    "start": 133,
+                    "end": 205,
+                    "filename": "./files/generated_by_me/print4.rinha"
+                  }
+                },
+                "location": {
+                  "start": 111,
+                  "end": 205,
+                  "filename": "./files/generated_by_me/print4.rinha"
+                }
+              },
+              "location": {
+                "start": 88,
+                "end": 205,
+                "filename": "./files/generated_by_me/print4.rinha"
+              }
+            },
+            "location": {
+              "start": 65,
+              "end": 205,
+              "filename": "./files/generated_by_me/print4.rinha"
+            }
+          },
+          "location": {
+            "start": 47,
+            "end": 205,
+            "filename": "./files/generated_by_me/print4.rinha"
+          }
+        },
+        "location": {
+          "start": 29,
+          "end": 205,
+          "filename": "./files/generated_by_me/print4.rinha"
+        }
+      },
+      "location": {
+        "start": 14,
+        "end": 205,
+        "filename": "./files/generated_by_me/print4.rinha"
+      }
+    },
+    "location": {
+      "start": 0,
+      "end": 205,
+      "filename": "./files/generated_by_me/print4.rinha"
+    }
+  },
+  "location": {
+    "start": 0,
+    "end": 205,
+    "filename": "./files/generated_by_me/print4.rinha"
+  }
+}
