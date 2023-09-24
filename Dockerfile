@@ -6,3 +6,4 @@ COPY /src /usr/src/app/src
 COPY main.py /usr/src/app
 
 ENTRYPOINT [ "python", "-m", "main" ]
+CMD [ "python", "-m", "main" ]

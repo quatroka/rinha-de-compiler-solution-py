@@ -1,2 +1,4 @@
 *.pyc
 .pytest_cache
+source.rinha.json
+.vscode

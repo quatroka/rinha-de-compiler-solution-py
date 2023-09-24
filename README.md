@@ -13,6 +13,13 @@ It was great to learn and see how far I could go
 
     docker build . --tag=quatroka/rinha-solution:0.1
 
+## For execute on rinha tests(or without params)
+
+    docker run --volume <host_files>:/var/rinha/source.rinha.json --rm quatroka/rinha-solution:0.1
+
+    # Ex:
+    docker run --volume ./source.rinha.json:/var/rinha/source.rinha.json --rm quatroka/rinha-solution:0.1
+
 ## Mount files on docker and execute
 
     docker run --volume <host_files>:/usr/src/app/files --rm quatroka/rinha-solution:0.1 <rinha_filepath_to_execute>
